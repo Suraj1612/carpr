@@ -1,6 +1,11 @@
 import streamlit as st
 import pickle
+from sklearn.externals import joblib
+joblib.dump(model, "model.pkl")
+
 model = pickle.load(open('RF_price_predicting_model.pkl','rb'))
+joblib.dump(model, "model.pkl")
+model = joblib.load("model.pkl")
 
 def main():
     string = "Car Price Predictor"
